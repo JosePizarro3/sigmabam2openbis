@@ -8,15 +8,16 @@ classifiers = [
   "Intended Audience :: Science/Research",
   "Operating System :: OS Independent",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
 ]
 name = "sigmabam2openbis"
 description = "Mapper script to convert SigmaBAM chemical inventory exports into openBIS-compatible format. "
 dynamic = ["version"]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [
   { name = "Tom Rousseau", email = "tom.rousseau@bam.de" },
   { name = "Jose M. Pizarro", email = "jose.pizarro-blanco@bam.de" },
@@ -29,7 +30,7 @@ license = { file = "LICENSE" }
 dependencies = [
   "pybis~=1.37.1rc4",
   "pandas",
-  "bam-masterdata>=0.8.2",
+  "bam-masterdata>=0.15.0",
 ]
 
 [project.urls]
@@ -38,14 +39,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "mypy==1.0.1",
   "ruff",
   "pytest",
   "pytest-timeout",
   "pytest-cov",
-]
-tuto = [
-  "marimo",
 ]
 
 [tool.ruff]
@@ -116,13 +113,6 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
-
-[tool.mypy]
-strict = false
-ignore_missing_imports = true
-follow_imports = "silent"
-no_strict_optional = true
-disable_error_code = "import, annotation-unchecked"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
